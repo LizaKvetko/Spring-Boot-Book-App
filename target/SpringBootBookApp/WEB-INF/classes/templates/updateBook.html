@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>BookApplication</title>
+</head>
+<body bgcolor="wheat">
+<br><br>
+<h1 align = "center">Welcome to Book Application</h1>
+<br><br>
+<h2 align = "center">
+<a href = "/user/profile">Profile</a> |
+<a href = "/book/addBook">Add Book</a> |
+<a href = "viewBook">View Book</a> |
+<a href = "index">Logout</a> 
+</h2>
+<br><br>
+
+
+<form th:action = "@{/book/update}" th:object = "${book}" method = "post" align = "center">
+	<!-- get bid parameter from viewBook.html -->
+	<input type = "hidden" th:field = "*{bid}" value = "${param.bid}">
+	<input type = "text" th:field = "*{book_name}" placeholder = "Enter book name">
+	<input type = "text" th:field = "*{book_price}" placeholder = "Enter book price">
+	<input type = "text" th:field = "*{book_author}" placeholder = "Enter book author">
+	<input type = "text" th:field = "*{book_publisher}" placeholder = "Enter book publisher">
+	<input type = "submit" value = "Update Book">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>BookApplication</title>
+</head>
+<body bgcolor="wheat">
+<br><br>
+<h1 align = "center">Welcome to Book Application</h1>
+<br><br>
+<h2 align = "center">
+<a href = "/user/profile">Profile</a> |
+<a href = "/book/addBook">Add Book</a> |
+<a href = "/book/viewBook">View Book</a> |
+<a href = "/">Logout</a> 
+</h2>
+<br><br>
+
+<table border = "2" cellpadding = "20" width = "400" height = "200" align = "center">
+<tr>
+<th>Id</th><th>Name</th><th>Price</th><th>Author</th><th>Publisher</th><th>Delete</th><th>Update</th>
+</tr>
+<tr th:each = "book: ${book}">
+	<td th:text = "${book.bid}"></td>
+	<td th:text = "${book.book_name}"></td>
+	<td th:text = "${book.book_price}"></td>
+	<td th:text = "${book.book_author}"></td>
+	<td th:text = "${book.book_publisher}"></td>
+	<td> <a th:href = "@{/book/deleteBook/{bid}(bid=${book.bid})}">Delete</a> </td>
+	<td> <a th:href = "@{/book/updateBook(bid=${book.bid})}">Update</a> </td>
+</tr>
+</table>
+	
+</body>
+</html>

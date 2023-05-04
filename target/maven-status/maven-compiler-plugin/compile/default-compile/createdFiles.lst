@@ -1,0 +1,9 @@
+com/app/repository/UserRepository.class
+com/app/service/BookService.class
+com/app/model/Book.class
+com/app/repository/BookRepository.class
+com/app/SpringBootBook.class
+com/app/model/User.class
+com/app/controller/UserController.class
+com/app/controller/BookController.class
+com/app/service/UserService.class

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>BookApplication</title>
+</head>
+<body bgcolor="wheat">
+<br><br>
+<h1 align = "center">Welcome to Book Application</h1>
+<br><br>
+
+<br><br>
+<div align = "center">
+	<h2>Login</h2> 
+	<br>
+	<a href = "register">Don't have an account yet? Register</a> 
+</div>
+<br><br>
+
+<form th:action="@{/user/login_user}" th:object="${login}" method="post" align = "center">
+	<input type = 'email' th:field = "*{email}" placeholder="Enter email">
+	<input type = 'password' th:field = "*{password}" placeholder="Enter password">
+	<input type = 'submit' value = "Login">
+</form>
+</body>
+</html>

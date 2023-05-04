@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>BookApplication</title>
+</head>
+<body bgcolor="wheat">
+<br><br>
+<h1 align = "center">Welcome to Book Application</h1>
+<br><br>
+<h2 align = "center">
+<a href = "/user/profile">Profile</a> |
+<a href = "/book/addBook">Add Book</a> |
+<a href = "/book/viewBook">View Book</a> |
+<a href = "/">Logout</a> 
+</h2>
+<br><br>
+<table border = "2" width = "400" height = "200" cellpadding = "20" align = "center">
+	<tr> 
+		<th>Id</th>
+		<th>Username</th>
+		<th>Email</th>
+		<th>Phone</th>
+		<th>Address</th>
+	</tr>
+	<tr th:each="user: ${user}">
+		<td th:text="${user.id}"> </td>
+		<td th:text="${user.username}"> </td>
+		<td th:text="${user.email}"> </td>
+		<td th:text="${user.phone}"> </td>
+		<td th:text="${user.address}"> </td> 
+	</tr>			
+</table>
+
+</body>
+</html>
